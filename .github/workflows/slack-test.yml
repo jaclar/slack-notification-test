@@ -34,7 +34,6 @@ jobs:
             {
               text: 'New release deployed',
               attachments: [{
-                author_name: "8398a7@action-slack"
                 fallback: 'fallback',
                 color: 'good',
                 title: 'Environment',
