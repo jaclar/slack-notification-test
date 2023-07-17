@@ -32,10 +32,18 @@ jobs:
           fields: repo,message,commit,author,action,eventname,ref,workflow,job,took,pullrequest
           custom_payload: |
             {
+              text: 'New Deploy' 
               attachments: [{
+                title: 'Environment'
                 color: 'good',
-                text: `A new release has been deployed to *${{ inputs.flavor }}*\nRelease: [[WEB-${{inputs.flavor}}] 1.2.3)]`,
-              }]
+                text: `${{ inputs.flavor }}`,
+                short: true
+              },{
+                title: 'Release'
+                color: 'good',
+                text: `<https://carvcom.sentry.io/releases/%5BWEB-dev%5D%201.1.2%20(642)/?environment=WEB-dev&project=6583585|[WEB-${{inputs.flavor}}] 1.2.3)>`,
+                long: true
+              },]
             }
         env:
           SLACK_WEBHOOK_URL: ${{ secrets.SLACK_WEBHOOK_DEPLOY }}
