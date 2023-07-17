@@ -29,7 +29,6 @@ jobs:
         uses: 8398a7/action-slack@v3
         with:
           status: "custom"
-          fields: repo,message,commit,author,action,eventname,ref,workflow,job,took,pullrequest
           custom_payload: |
             {
               text: 'New release deployed',
