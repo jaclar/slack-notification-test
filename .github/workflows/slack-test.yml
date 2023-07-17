@@ -42,7 +42,7 @@ jobs:
                 title: 'Release'
                 color: 'good',
                 text: `<https://carvcom.sentry.io/releases/%5BWEB-dev%5D%201.1.2%20(642)/?environment=WEB-dev&project=6583585|[WEB-${{inputs.flavor}}] 1.2.3)>`,
-                long: true
+                short: false
               },]
             }
         env:
