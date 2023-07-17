@@ -43,7 +43,7 @@ jobs:
                   title: 'lower case',
                   value: 'LOWER CASE CHECK'.toLowerCase(),
                   short: true
-                }
+                }]
               }]
             }        
         env:
