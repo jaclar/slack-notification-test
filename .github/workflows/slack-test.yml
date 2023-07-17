@@ -32,16 +32,16 @@ jobs:
           fields: repo,message,commit,author,action,eventname,ref,workflow,job,took,pullrequest
           custom_payload: |
             {
-              text: 'FooBar',
+              text: 'New release deployed',
               attachments: [{
-                "author_name": "8398a7@action-slack", // json
+                author_name: "8398a7@action-slack"
                 fallback: 'fallback',
                 color: 'good',
-                title: 'CI Result',
-                text: 'Succeeded',
+                title: 'Environment',
+                text: '${{ inputs.flavor }}',
                 fields: [{
-                  title: 'lower case',
-                  value: 'LOWER CASE CHECK'.toLowerCase(),
+                  title: 'Release',
+                  value: '<https://carvcom.sentry.io/releases/%5BWEB-dev%5D%201.1.2%20(642)/?environment=WEB-dev&project=6583585>|[WEB-dev] 1.1.2 (642)>',
                   short: true
                 }]
               }]
