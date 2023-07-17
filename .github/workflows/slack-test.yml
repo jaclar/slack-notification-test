@@ -35,7 +35,7 @@ jobs:
               text: 'New release deployed',
               attachments: [{
                 fallback: 'fallback',
-                color: 'good',
+                color: '${{ inputs.flavor }}' === 'dev' ? 'good' : '${{ inputs.flavor }}' === 'staging' ? 'warning' : 'danger',
                 title: 'Release',
                 text: '<https://carvcom.sentry.io/releases/[WEB-${{inputs.flavor}}]%201.1.2%20(642)/|[WEB-dev] 1.1.2 (642)>',
                 fields: [{
