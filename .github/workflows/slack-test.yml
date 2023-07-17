@@ -36,11 +36,11 @@ jobs:
               attachments: [{
                 fallback: 'fallback',
                 color: 'good',
-                title: 'Environment',
-                text: '${{ inputs.flavor }}',
+                title: 'Release',
+                text: '<https://carvcom.sentry.io/releases/%5BWEB-dev%5D%201.1.2%20(642)/?environment=WEB-dev&project=6583585|[WEB-dev] 1.1.2 (642)>',
                 fields: [{
-                  title: 'Release',
-                  value: '<https://carvcom.sentry.io/releases/%5BWEB-dev%5D%201.1.2%20(642)/?environment=WEB-dev&project=6583585>|[WEB-dev] 1.1.2 (642)>',
+                  title: 'Environment',
+                  value: '${{ inputs.flavor }}',
                   short: true
                 }]
               }]
