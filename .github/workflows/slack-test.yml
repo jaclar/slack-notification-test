@@ -37,7 +37,7 @@ jobs:
                 fallback: 'fallback',
                 color: 'good',
                 title: 'Release',
-                text: '<https://carvcom.sentry.io/releases/%5BWEB-dev%5D%201.1.2%20(642)/?environment=WEB-dev&project=6583585|[WEB-dev] 1.1.2 (642)>',
+                text: '<https://carvcom.sentry.io/releases/[WEB-${{inputs.flavor}}]%201.1.2%20(642)/|[WEB-dev] 1.1.2 (642)>',
                 fields: [{
                   title: 'Environment',
                   value: '${{ inputs.flavor }}',
@@ -47,5 +47,6 @@ jobs:
             }        
         env:
           SLACK_WEBHOOK_URL: ${{ secrets.SLACK_WEBHOOK_DEPLOY }}
+          VERSION: "[WEB-${{inputs.flavor}}] ${{ 1.2.3 }} (${{ github.run_number }})"
         if: success()
 
