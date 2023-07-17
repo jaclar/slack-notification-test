@@ -2,11 +2,15 @@
 
 name: Manual Slack trigger test
 on:
-  workflow_call:
+  workflow_dispatch:
     inputs:
       flavor:
         required: true
-        type: string
+        type: choice
+        options:
+          - dev
+          - staging
+          - production
 
 # A workflow run is made up of one or more jobs that can run sequentially or in parallel
 jobs:
